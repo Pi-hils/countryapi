@@ -25,9 +25,15 @@ class App extends Component {
   }
 
   render() {
+    var { isLoaded, asias, europes } = this.state;
+
     return (
         <div>
         <h1>Countries</h1>
+        {/* <ul>
+        {asias.map(asia )}
+        </ul> */}
+
       </div>
     );
   }
