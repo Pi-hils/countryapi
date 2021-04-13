@@ -7,10 +7,22 @@ class App extends Component {
     super(props);
     this.state = {
     asias: [],
-    eupopes: [],
+    europes: [],
     isLoaded: false
   }
 }
+
+  componentDidMount(){
+
+    fetch("https://restcountries.eu/rest/v2/region/asia")
+    .then(res => res.json()) 
+    .then(json => {
+      this.setState({
+        isLoaded: true,
+        asias: json,
+      })
+    })
+  }
 
   render() {
     return (
