@@ -53,17 +53,22 @@ class Regions extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('These are the countries in: ' + this.state.value);
+  
     if(this.state.value == 'asia'){
-
+      alert('These are the countries in: ' + 'asia');
+    }
+    else{
+      alert('These are the countries in: ' + this.state.value)
     }
     event.preventDefault();
   }
 
   render() {
-    var { asias, europes } = this.state;
+    var { isLoaded, asias, europes } = this.state;
 
-      return(<form onSubmit={this.handleSubmit}>
+    if (!isLoaded) {
+      return(<div className='form'>
+      <form onSubmit={this.handleSubmit}>
         <label>
           Please select Region:
           <select value={this.state.value} onChange={this.handleChange}>
@@ -75,19 +80,20 @@ class Regions extends React.Component {
         </label>
         <input type="submit" value="Submit" />
       </form>
+      </div>
       )
-    // }
+    }
   
+  
+else{
     return (
-      <div className="App">
+    <div className="App">
       <h2>Countries</h2>
         <ul className='asias'>
         {asias.map(asia =>(
             <li key={asia.id}>
-              Name:{asia.name} <strong>||</strong> Capital:{asia.capital}<strong>||</strong> Population:{asia.population}<strong>||</strong> Flag: {asia.flag} <strong>||</strong> 
-
+              Name:{asia.name} <strong>||</strong> Capital:{asia.capital}<strong>||</strong> Population:{asia.population}<strong>||</strong> Flag: {asia.flag} <strong>||</strong>  
             </li>
-            
           ))}
           -----------------------------------
           <h1>Europe</h1>
@@ -101,5 +107,6 @@ class Regions extends React.Component {
     );
   }
   }
+}
 
 export default Regions

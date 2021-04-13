@@ -43,3 +43,8 @@ ul{
     transform: rotate(360deg);
   }
 }
+
+.form{
+  padding-top: 20px;
+  font-size: large;
+}
