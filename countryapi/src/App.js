@@ -27,15 +27,20 @@ class App extends Component {
   render() {
     var { isLoaded, asias, europes } = this.state;
 
-    return (
-        <div>
-        <h1>Countries</h1>
+    if(!isLoaded){
+      return <h3>Will Load shortly...</h3>
+    }
+    else {
+      return (
+          <div>
+          <h1>Countries</h1>
         {/* <ul>
-        {asias.map(asia )}
+        {asias.map(asia)}
         </ul> */}
 
       </div>
     );
+   }
   }
 }
 
