@@ -34,9 +34,13 @@ class App extends Component {
       return (
           <div>
           <h1>Countries</h1>
-        {/* <ul>
-        {asias.map(asia)}
-        </ul> */}
+        <ul>
+        {asias.map(asia =>(
+          <li key={asia.id}>
+          Name: {asia.name}<strong>||</strong>Capital: {asia.capital} <strong>||</strong> Population: {asia.population}<strong>||</strong>  Flag: {asia.flag}
+          </li>
+        ))}
+        </ul>
 
       </div>
     );
