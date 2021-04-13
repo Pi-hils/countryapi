@@ -22,6 +22,15 @@ class App extends Component {
         asias: json,
       })
     })
+
+    fetch("https://restcountries.eu/rest/v2/region/europe")
+    .then(res => res.json())
+    .then(json => {
+      this.setState({
+        isLoaded: true,
+        europes: json,
+      })
+    })
   }
 
   render() {
@@ -40,6 +49,14 @@ class App extends Component {
           Name: {asia.name}<strong>||</strong>Capital: {asia.capital} <strong>||</strong> Population: {asia.population}<strong>||</strong>  Flag: {asia.flag}
           </li>
         ))}
+
+        -----------------------------------
+            <h1>Europe</h1>
+            {europes.map(eu =>(
+              <li key={eu.id}>
+                Name:{eu.name} <strong>||</strong> Capital:{eu.capital}<strong>||</strong> Population:{eu.population}<strong>||</strong> Flag: {eu.flag}
+              </li>
+            ))}
         </ul>
 
       </div>
