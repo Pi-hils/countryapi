@@ -47,7 +47,7 @@ class App extends Component {
           <Regions></Regions>
      
           <h1>Countries</h1>
-          {/* if(){ */}
+        
             <ul>
         {asias.map(asia =>(
           <li key={asia.id}>
