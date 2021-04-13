@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Regions from './components/Regions'
 import './App.css';
 
 class App extends Component {
@@ -34,6 +35,7 @@ class App extends Component {
   }
 
   render() {
+
     var { isLoaded, asias, europes } = this.state;
 
     if(!isLoaded){
@@ -42,6 +44,7 @@ class App extends Component {
     else {
       return (
           <div>
+          <Regions></Regions>
           <h1>Countries</h1>
         <ul>
         {asias.map(asia =>(
