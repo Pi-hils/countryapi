@@ -34,24 +34,24 @@ class App extends Component {
 
     const { countries } = this.state;
 
-    //  if(handleSubmit==){
-    //   return <h3>Will Load shortly...</h3>
-    // }
-    // else {
       return (
-          <div>
+        <div className='dropdown'>
           <DropdownSelector onChoiceSelected={this.onSubmit}/>
           <h1>Countries</h1>
-        
-            <ul>
-        {countries.map(country=>(
-          <li key={country.id}>
-          Name: {country.name}<strong>||</strong>Capital: {country.capital} <strong>||</strong> Population: {country.population}<strong>||</strong>  Flag: {country.flag}
-          </li>
-        ))}
-        </ul> 
-
-      </div>
+           <ul className='countries'>
+             {countries.map(country=>(
+              <li key={country.id}>
+              <strong>Name:</strong> {country.name} <strong>|| Capital:</strong> {country.capital} <strong>|| Population:</strong>  {country.population} <strong>|| Flag:</strong> {country.flag}
+              <strong>||</strong> 
+              {country.currencies.map(cur=>(
+                <li value={cur.id}>
+                  Currency: {cur.name}
+                </li>
+              ))}
+              </li>
+            ))}
+           </ul> 
+        </div>
     );
   }
   }

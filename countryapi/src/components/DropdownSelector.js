@@ -7,7 +7,7 @@ class DropdownSelector extends React.Component {
     this.state = {
     isLoaded: false,
     value: '',
-    choices: ['asia', 'europe']
+    choices: ['','asia', 'europe']
   };
 
     this.handleChange = this.handleChange.bind(this);
@@ -33,9 +33,9 @@ class DropdownSelector extends React.Component {
       return(<div className='form'>
       <form onSubmit={this.handleSubmit}>
         <label>
-          Please select Region:
+          <strong>Please select Region:</strong>
           <select value={this.state.value} onChange={this.handleChange}>
-          
+            <option value="region"></option>
             <option value="asia">Asia</option>
             <option value="europe">Europe</option>
            
