@@ -20,6 +20,8 @@ Dropdown: https://reactjs.org/docs/forms.html<br>
 Events: https://reactjs.org/docs/handling-events.html<br>
 Components: https://reactjs.org/docs/components-and-props.html
 
+### The Application
+[![Image from Gyazo](https://i.gyazo.com/1fe59568b599a2c8d01bf46fcf396848.png)](https://gyazo.com/1fe59568b599a2c8d01bf46fcf396848)
 ### APIs
 https://restcountries.eu/rest/v2/region/asia\
 https://restcountries.eu/rest/v2/region/europe
