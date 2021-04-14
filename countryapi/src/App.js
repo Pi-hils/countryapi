@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Regions from './components/Regions'
+import DropdownSelector from './components/DropdownSelector'
 import './App.css';
 
 class App extends Component {
@@ -7,36 +7,32 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-    asias: [],
-    europes: [],
+    countries: [],
     isLoaded: false
   }
+
+  this.onSubmit = this.onSubmit.bind(this)
 }
 
-  componentDidMount(){
 
-    fetch("https://restcountries.eu/rest/v2/region/asia")
+  onSubmit(region) {
+    this.setState({
+      isLoaded: false,
+    })
+
+    fetch(`https://restcountries.eu/rest/v2/region/${region}`)
     .then(res => res.json()) 
     .then(json => {
       this.setState({
         isLoaded: true,
-        asias: json,
+        countries: json,
       })
-    })
-
-    fetch("https://restcountries.eu/rest/v2/region/europe")
-    .then(res => res.json())
-    .then(json => {
-      this.setState({
-        isLoaded: true,
-        europes: json,
-      })
-    })
+    }) 
   }
 
   render() {
 
-    var { isLoaded, asias, europes } = this.state;
+    const { countries } = this.state;
 
     //  if(handleSubmit==){
     //   return <h3>Will Load shortly...</h3>
@@ -44,26 +40,15 @@ class App extends Component {
     // else {
       return (
           <div>
-          <Regions></Regions>
-     
+          <DropdownSelector onChoiceSelected={this.onSubmit}/>
           <h1>Countries</h1>
         
             <ul>
-        {asias.map(asia =>(
-          <li key={asia.id}>
-          Name: {asia.name}<strong>||</strong>Capital: {asia.capital} <strong>||</strong> Population: {asia.population}<strong>||</strong>  Flag: {asia.flag}
+        {countries.map(country=>(
+          <li key={country.id}>
+          Name: {country.name}<strong>||</strong>Capital: {country.capital} <strong>||</strong> Population: {country.population}<strong>||</strong>  Flag: {country.flag}
           </li>
         ))}
-
-        -----------------------------------
-          
-
-        <h1>Europe</h1>
-            {europes.map(eu =>(
-              <li key={eu.id}>
-                Name:{eu.name} <strong>||</strong> Capital:{eu.capital}<strong>||</strong> Population:{eu.population}<strong>||</strong> Flag: {eu.flag}
-              </li>
-            ))}
         </ul> 
 
       </div>
