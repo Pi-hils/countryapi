@@ -1,5 +1,5 @@
 
-### Regions, Countries
+## Regions, Countries
 This is application outputs - Name of Country, Capital, Population, Currencies, Flag.
 
 ## What I can do differently next time
@@ -16,8 +16,8 @@ run `npm start` in your terminal\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. <br>
 
 ## Useful links
-Dropdown: https://reactjs.org/docs/forms.html\
-Events: https://reactjs.org/docs/handling-events.html\
+Dropdown: https://reactjs.org/docs/forms.html<br>
+Events: https://reactjs.org/docs/handling-events.html<br>
 Components: https://reactjs.org/docs/components-and-props.html
 
 ### APIs
