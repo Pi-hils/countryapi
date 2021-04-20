@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DropdownSelector from './components/DropdownSelector'
 import './App.css';
+import CountryTable from './components/CountryTable';
 
 class App extends Component {
 
@@ -37,15 +38,18 @@ class App extends Component {
       return (
         <div className='dropdown'>
           <DropdownSelector onChoiceSelected={this.onSubmit}/>
-          <h1>Countries</h1>
+          
+   
            <ul className='countries'>
+           <h1>Countries</h1>
+           <CountryTable />
              {countries.map(country=>(
               <li key={country.id}>
-              <strong>Name:</strong> {country.name} <strong>|| Capital:</strong> {country.capital} <strong>|| Population:</strong>  {country.population} <strong>|| Flag:</strong> {country.flag}
-              <strong>||</strong> 
-              {country.currencies.map(cur=>(
-                <li value={cur.id}>
-                  Currency: {cur.name}
+                {country.name}<strong>&emsp; &emsp; &emsp; || &emsp; &emsp; </strong> {country.capital} <strong>&emsp; &emsp; &emsp;||&emsp; &emsp; </strong>  {country.population} <strong>&emsp; &emsp; &emsp;|| &emsp; &emsp; </strong> {country.flag}
+                <strong>&emsp; &emsp; &emsp;||</strong> 
+                {country.currencies.map(cur=>(
+              <li value={cur.id}>
+              <strong></strong> {cur.name}
                 </li>
               ))}
               </li>

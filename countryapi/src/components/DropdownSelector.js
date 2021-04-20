@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class DropdownSelector extends React.Component {
   constructor(props) {
     super(props);
@@ -33,13 +32,14 @@ class DropdownSelector extends React.Component {
       return(<div className='form'>
       <form onSubmit={this.handleSubmit}>
         <label>
-          <strong>Please select Region:</strong>
+          <strong>Please select Region:&ensp;</strong>
           <select value={this.state.value} onChange={this.handleChange}>
             <option value="region"></option>
             <option value="asia">Asia</option>
             <option value="europe">Europe</option>
            
           </select>
+          &ensp;
         </label>
         <input type="submit" value="Submit" />
       </form>

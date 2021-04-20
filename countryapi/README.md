@@ -5,6 +5,8 @@ This is application outputs - Name of Country, Capital, Population, Currencies, 
 ## What I can do differently next time
 - Find a way to create dropdown within dropdown (countries).
 - Ouput info for the selected country only.
+- A wireframe of the project, expressing the components clearly.
+- Created a table instead that takes in the titles  - makes it neater and less repetitive
 
 ### Installation instructions
 - Create a reat app:
@@ -12,6 +14,7 @@ This is application outputs - Name of Country, Capital, Population, Currencies, 
 - cd [app_name]
 
 ### To run application
+Navigate into your folder by trying in the terminal `cd countryapi`\
 run `npm start` in your terminal\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. <br>
 

@@ -47,10 +47,11 @@ ul{
 .form{
   padding-top: 20px;
   font-size: large;
+  text-align: center;
 }
 
 .countries li{
-  font-size: 20px;
+  font-size: 18px;
   list-style-type: none;
   padding: 15px 15px;
   border-left: 6px solid black;
@@ -60,7 +61,7 @@ ul{
 
 .dropdown {
   padding-top: 5rem;
-  text-align: center;
+  /* text-align: center; */
   color: black;
   /* font-weight: bold; */
 
